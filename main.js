@@ -72,7 +72,7 @@ const colorData = [
     //BOTTOM
     0.5, 1, 0.5,    // top
     0.5, 1, 0.5,   // bottom right
-    0.5, 1, 0.5,  // bottom left
+    0.5, 1, 0.,  // bottom left
     0.5, 1, 0.5,
 
     //LEFT
@@ -198,20 +198,20 @@ function draw() {
     gl.clearColor(0, 0, 0, 0); // Set clear color
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    // const rotateXMatrix = [
-    //     1, 0, 0, 0,
-    //     0, Math.cos(theta), -Math.sin(theta), 0,
-    //     0, Math.sin(theta), Math.cos(theta), 0,
-    //     0, 0, 0, 1
-    // ];
+    const rotateXMatrix = [
+        1, 0, 0, 0,
+        0, Math.cos(theta), -Math.sin(theta), 0,
+        0, Math.sin(theta), Math.cos(theta), 0,
+        0, 0, 0, 1
+    ];
 
     
-    // var rotateZMatrix = [
-    //     Math.cos(theta), -Math.sin(theta), 0, 0,
-    //     Math.sin(theta), Math.cos(theta), 0, 0,
-    //     0, 0, 1, 0,
-    //     0, 0, 0, 1
-    // ];
+    var rotateZMatrix = [
+        Math.cos(theta), -Math.sin(theta), 0, 0,
+        Math.sin(theta), Math.cos(theta), 0, 0,
+        0, 0, 1, 0,
+        0, 0, 0, 1
+    ];
 
       var rotateYMatrix = [
             Math.cos(theta), 0, Math.sin(theta), 0,
@@ -222,8 +222,8 @@ function draw() {
         
     gl.uniformMatrix4fv(uScaleMatrix, false, scaledMatrix);
     gl.uniformMatrix4fv(uTranslateMatrix, false, translatedMatrix);
-    // gl.uniformMatrix4fv(uRotateMatrix, false, rotateZMatrix);
     gl.uniformMatrix4fv(uRotateMatrix, false, rotateYMatrix);
+    // gl.uniformMatrix4fv(uRotateMatrix, false, rotateZMatrix);
 
 
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
