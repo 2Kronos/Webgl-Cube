@@ -1,7 +1,7 @@
 ## CUBE.
-
-1) This is code is for a cube that spins in the X, Y, Z independently.
-2) This cube is not able to spin in multiple axis's at the same time.
+![cubev1](https://github.com/2Kronos/Webgl-Cube/assets/163877990/877ab36b-042f-47db-b9dc-307c94d688e7)
+1) This is code is for a cube that spins in the X, Y, Z.
+2) This cube is not able to spin in multiple axis's at the same time only one axis at a time.
 
 ## Erros.
 There is a hole on the bottom of the cube.
